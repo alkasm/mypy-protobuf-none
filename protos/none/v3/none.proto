@@ -1,0 +1,10 @@
+syntax = "proto3";
+package none.v3;
+
+enum None {
+    ENUM_VALUE = 0;
+}
+
+message Message {
+    None none = 1;
+}

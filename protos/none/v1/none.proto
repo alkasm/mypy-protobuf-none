@@ -1,0 +1,14 @@
+syntax = "proto3";
+package none.v1;
+
+message None {
+    string field = 1;
+}
+
+message Message {
+    None none = 1;
+}
+
+message OtherMessage {
+    string None = 1;
+}
