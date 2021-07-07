@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12none/v2/none.proto\x12\x07none.v2\"E\n\x07Message\x12#\n\x04none\x18\x01 \x01(\x0b\x32\x15.none.v2.Message.None\x1a\x15\n\x04None\x12\r\n\x05\x66ield\x18\x01 \x01(\tb\x06proto3'
+  serialized_pb=b'\n\x12none/v2/none.proto\x12\x07none.v2\"\x92\x01\n\x07Message\x12#\n\x04none\x18\x01 \x01(\x0b\x32\x15.none.v2.Message.None\x12,\n\x05inner\x18\x02 \x01(\x0b\x32\x1d.none.v2.Message.InnerMessage\x1a\x15\n\x04None\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x1a\x1d\n\x0cInnerMessage\x12\r\n\x05\x66ield\x18\x01 \x01(\tb\x06proto3'
 )
 
 
@@ -52,8 +52,39 @@ _MESSAGE_NONE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=79,
-  serialized_end=100,
+  serialized_start=126,
+  serialized_end=147,
+)
+
+_MESSAGE_INNERMESSAGE = _descriptor.Descriptor(
+  name='InnerMessage',
+  full_name='none.v2.Message.InnerMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='field', full_name='none.v2.Message.InnerMessage.field', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=149,
+  serialized_end=178,
 )
 
 _MESSAGE = _descriptor.Descriptor(
@@ -71,10 +102,17 @@ _MESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='inner', full_name='none.v2.Message.inner', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_MESSAGE_NONE, ],
+  nested_types=[_MESSAGE_NONE, _MESSAGE_INNERMESSAGE, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -83,12 +121,14 @@ _MESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31,
-  serialized_end=100,
+  serialized_start=32,
+  serialized_end=178,
 )
 
 _MESSAGE_NONE.containing_type = _MESSAGE
+_MESSAGE_INNERMESSAGE.containing_type = _MESSAGE
 _MESSAGE.fields_by_name['none'].message_type = _MESSAGE_NONE
+_MESSAGE.fields_by_name['inner'].message_type = _MESSAGE_INNERMESSAGE
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -100,12 +140,20 @@ Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,
     # @@protoc_insertion_point(class_scope:none.v2.Message.None)
     })
   ,
+
+  'InnerMessage' : _reflection.GeneratedProtocolMessageType('InnerMessage', (_message.Message,), {
+    'DESCRIPTOR' : _MESSAGE_INNERMESSAGE,
+    '__module__' : 'none.v2.none_pb2'
+    # @@protoc_insertion_point(class_scope:none.v2.Message.InnerMessage)
+    })
+  ,
   'DESCRIPTOR' : _MESSAGE,
   '__module__' : 'none.v2.none_pb2'
   # @@protoc_insertion_point(class_scope:none.v2.Message)
   })
 _sym_db.RegisterMessage(Message)
 _sym_db.RegisterMessage(getattr(Message, 'None'))
+_sym_db.RegisterMessage(Message.InnerMessage)
 
 
 # @@protoc_insertion_point(module_scope)
